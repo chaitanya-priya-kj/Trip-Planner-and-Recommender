@@ -70,10 +70,9 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   onPressed: () => {},
-                                  color: Colors.grey,
+                                  color: Colors.grey.withOpacity(2),
                                   padding: EdgeInsets.all(1.0),
                                   child: Row(
-                                    // Replace with a Row for horizontal icon + text
                                     children: <Widget>[
                                       Text("Search"),
                                       Icon(Icons.search),
