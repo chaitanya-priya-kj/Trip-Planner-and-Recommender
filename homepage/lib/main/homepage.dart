@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import "package:story_view/story_view.dart";
+import 'package:carousel_slider/carousel_slider.dart';
+import 'caro.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -11,30 +11,28 @@ class _HomepageState extends State<Homepage> {
   double get deviceWidth => MediaQuery.of(context).size.width;
   double get deviceHeight => MediaQuery.of(context).size.height;
 
-  final StoryController controller = StoryController();
-
-  int count = 0;
-
-  List<Image> paths = [];
-
-  counter() {
-    print(count);
-    if (count == 1) {
-      paths.add(Image.asset("assets/images/1.jpg"));
-    }
-    if (count == 2) {
-      paths.add(Image.asset("assets/images/2.jpg"));
-    }
-    if (count == 3) {
-      paths.add(Image.asset("assets/images/3.jpg"));
-    }
-    if (count == 4) {
-      paths.add(Image.asset("assets/images/4.jpg"));
-    }
-    if (count == 5) {
-      paths.add(Image.asset("assets/images/5.jpg"));
-    }
-  }
+  List<Image> places = [
+    Image.asset("assets/images/1.jpg"),
+    Image.asset("assets/images/2.jpg"),
+    Image.asset("assets/images/3.jpg"),
+    Image.asset("assets/images/4.jpg"),
+    Image.asset("assets/images/5.jpg")
+  ];
+  List<Image> hotels = [
+    Image.asset("assets/images/1.jpg"),
+    Image.asset("assets/images/2.jpg"),
+    Image.asset("assets/images/3.jpg"),
+    Image.asset("assets/images/4.jpg"),
+    Image.asset("assets/images/5.jpg")
+  ];
+  List<Image> restaurants = [
+    Image.asset("assets/images/1.jpg"),
+    Image.asset("assets/images/2.jpg"),
+    Image.asset("assets/images/3.jpg"),
+    Image.asset("assets/images/4.jpg"),
+    Image.asset("assets/images/5.jpg")
+  ];
+  void query(String fetch) {}
 
   @override
   Widget build(BuildContext context) {
@@ -47,100 +45,137 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    height: 300,
-                    padding: EdgeInsets.all(8.0),
-                    child: StoryView(
-                      repeat: true,
-                      progressPosition: ProgressPosition.bottom,
-                      controller: controller,
-                      storyItems: [
-                        StoryItem.text(
-                          title:
-                              "Hello world!\nHave a look at some great Ghanaian delicacies. I'm sorry if your mouth waters. \n\nTap!",
-                          backgroundColor: Colors.orange,
-                          roundedTop: true,
-                        ),
-                        // StoryItem.inlineImage(
-                        //   NetworkImage(
-                        //       "https://image.ibb.co/gCZFbx/Banku-and-tilapia.jpg"),
-                        //   caption: Text(
-                        //     "Banku & Tilapia. The food to keep you charged whole day.\n#1 Local food.",
-                        //     style: TextStyle(
-                        //       color: Colors.white,
-                        //       backgroundColor: Colors.black54,
-                        //       fontSize: 17,
-                        //     ),
-                        //   ),
-                        // ),
-                        StoryItem.inlineProviderImage(
-                          AssetImage("assets/images/1.jpg"),
-                          // controller: controller,
-                        ),
-                        StoryItem.inlineImage(
-                          url:
-                              "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
-                          controller: controller,
-                          caption: Text(
-                            "Hektas, sektas and skatad",
-                            style: TextStyle(
-                              color: Colors.white,
-                              backgroundColor: Colors.black54,
-                              fontSize: 17,
-                            ),
+                  Row(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image(
+                            image: AssetImage("assets/images/temp.jpg"),
+                            height: 50,
+                            width: 60),
+                      ),
+                      Positioned(
+                        bottom: deviceHeight * 0.9,
+                        left: 50,
+                        right: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 190),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              ButtonTheme(
+                                minWidth: 120,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                  onPressed: () => {},
+                                  color: Colors.grey,
+                                  padding: EdgeInsets.all(1.0),
+                                  child: Row(
+                                    // Replace with a Row for horizontal icon + text
+                                    children: <Widget>[
+                                      Text("Search"),
+                                      Icon(Icons.search),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        )
-                      ],
-                      // onStoryShow: (s) {
-                      //   print("Showing a story");
-                      // },
-                      // onComplete: () {
-                      //   print("Completed a cycle");
-                      // },
-                      // progressPosition: ProgressPosition.bottom,
-                      // repeat: false,
-                      // inline: true,
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
+                  CarouselWithIndicatorDemo(),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: Row(
                       children: [
                         Row(
                           children: [
                             Text(
-                              "Hotels For You",
+                              "Places For You",
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),
-                            IconButton(
-                                icon: Icon(
-                                  Icons.plus_one,
-                                ),
-                                onPressed: () {
-                                  count++;
-                                  setState(() {
-                                    counter();
-                                  });
-                                })
                           ],
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: SizedBox(
                       height: 150,
                       width: deviceWidth,
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: paths,
+                          children: places,
                         ),
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
+                    child: Row(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Hotels Near You",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
+                    child: SizedBox(
+                      height: 150,
+                      width: deviceWidth,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: hotels,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
+                    child: Row(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Restaurants Near You",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
+                    child: SizedBox(
+                      height: 150,
+                      width: deviceWidth,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: restaurants,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 150)
                 ],
               ),
             ),
@@ -159,17 +194,18 @@ class _HomepageState extends State<Homepage> {
                       color: Colors.grey.withOpacity(0.5),
                     ),
                     child: Center(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(icon: Icon(Icons.home), onPressed: () {}),
-                        IconButton(
-                            icon: Icon(Icons.thumb_up_alt_rounded),
-                            onPressed: () {}),
-                        IconButton(icon: Icon(Icons.map), onPressed: () {}),
-                        IconButton(icon: Icon(Icons.note), onPressed: () {}),
-                      ],
-                    )),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconButton(icon: Icon(Icons.home), onPressed: () {}),
+                          IconButton(
+                              icon: Icon(Icons.thumb_up_alt_rounded),
+                              onPressed: () {}),
+                          IconButton(icon: Icon(Icons.map), onPressed: () {}),
+                          IconButton(icon: Icon(Icons.note), onPressed: () {}),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
