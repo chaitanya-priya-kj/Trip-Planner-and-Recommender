@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'search.dart';
 import 'caro.dart';
 
 class Homepage extends StatefulWidget {
@@ -7,33 +7,58 @@ class Homepage extends StatefulWidget {
   _HomepageState createState() => _HomepageState();
 }
 
+class Images {
+  Images(
+    int i, {
+    required this.Imagelink,
+    required this.Imagename,
+  });
+  Image Imagelink;
+  String Imagename;
+}
+
+List<Images> generateImages(List item) {
+  int numberOfItems = item.length;
+  return List<Images>.generate(numberOfItems, (int index) {
+    return Images(
+      index = index,
+      Imagelink: item[index],
+      Imagename: "image $index",
+    );
+  });
+}
+
+List<Image> restaurants = [
+  Image.asset("assets/images/1.jpg"),
+  Image.asset("assets/images/2.jpg"),
+  Image.asset("assets/images/3.jpg"),
+  Image.asset("assets/images/4.jpg"),
+  Image.asset("assets/images/5.jpg")
+];
+List<Image> hotels = [
+  Image.asset("assets/images/1.jpg"),
+  Image.asset("assets/images/2.jpg"),
+  Image.asset("assets/images/3.jpg"),
+  Image.asset("assets/images/4.jpg"),
+  Image.asset("assets/images/5.jpg")
+];
+List<Image> places = [
+  Image.asset("assets/images/1.jpg"),
+  Image.asset("assets/images/2.jpg"),
+  Image.asset("assets/images/3.jpg"),
+  Image.asset("assets/images/4.jpg"),
+  Image.asset("assets/images/5.jpg")
+];
+
 class _HomepageState extends State<Homepage> {
   double get deviceWidth => MediaQuery.of(context).size.width;
   double get deviceHeight => MediaQuery.of(context).size.height;
 
-  List<Image> places = [
-    Image.asset("assets/images/1.jpg"),
-    Image.asset("assets/images/2.jpg"),
-    Image.asset("assets/images/3.jpg"),
-    Image.asset("assets/images/4.jpg"),
-    Image.asset("assets/images/5.jpg")
-  ];
-  List<Image> hotels = [
-    Image.asset("assets/images/1.jpg"),
-    Image.asset("assets/images/2.jpg"),
-    Image.asset("assets/images/3.jpg"),
-    Image.asset("assets/images/4.jpg"),
-    Image.asset("assets/images/5.jpg")
-  ];
-  List<Image> restaurants = [
-    Image.asset("assets/images/1.jpg"),
-    Image.asset("assets/images/2.jpg"),
-    Image.asset("assets/images/3.jpg"),
-    Image.asset("assets/images/4.jpg"),
-    Image.asset("assets/images/5.jpg")
-  ];
-  void query(String fetch) {}
-
+  final List<Images> place = generateImages(places);
+  final List<Images> hotel = generateImages(hotels);
+  final List<Images> restro = generateImages(restaurants);
+  // void query(String fetch) {}
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,12 +90,18 @@ class _HomepageState extends State<Homepage> {
                             children: [
                               ButtonTheme(
                                 minWidth: 120,
-                                child: RaisedButton(
+                                child: FlatButton(
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
-                                  onPressed: () => {},
-                                  color: Colors.grey.withOpacity(2),
+                                  onPressed: () => {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => search())),
+                                    print("Search Button Pressed")
+                                  },
+                                  color: Colors.grey.withOpacity(1.0),
                                   padding: EdgeInsets.all(1.0),
                                   child: Row(
                                     children: <Widget>[
@@ -111,7 +142,15 @@ class _HomepageState extends State<Homepage> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: places,
+                          children: place.map<GestureDetector>((Images img) {
+                            return GestureDetector(
+                              onTap: () {
+                                print(img.Imagename);
+                                count++;
+                              },
+                              child: img.Imagelink,
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
@@ -140,7 +179,15 @@ class _HomepageState extends State<Homepage> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: hotels,
+                          children: hotel.map<GestureDetector>((Images img) {
+                            return GestureDetector(
+                              onTap: () {
+                                print(img.Imagename);
+                                count++;
+                              },
+                              child: img.Imagelink,
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
@@ -169,7 +216,15 @@ class _HomepageState extends State<Homepage> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: restaurants,
+                          children: restro.map<GestureDetector>((Images img) {
+                            return GestureDetector(
+                              onTap: () {
+                                print(img.Imagename);
+                                count++;
+                              },
+                              child: img.Imagelink,
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),

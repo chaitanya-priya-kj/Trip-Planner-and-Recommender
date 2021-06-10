@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_controller.dart';
+// import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -65,7 +65,12 @@ final List<Widget> imageSliders = imgList
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
-                    Image.asset(item, fit: BoxFit.cover, width: 1000.0),
+                    GestureDetector(
+                        child:
+                            Image.asset(item, fit: BoxFit.cover, width: 1000.0),
+                        onTap: () {
+                          print('Pressed ${imgList.indexOf(item)} image');
+                        }),
                     Positioned(
                       bottom: 0.0,
                       left: 0.0,
