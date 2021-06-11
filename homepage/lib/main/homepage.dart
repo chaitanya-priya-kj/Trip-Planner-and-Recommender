@@ -122,14 +122,10 @@ class _HomepageState extends State<Homepage> {
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Places For You",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Text(
+                          "Places For You",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -159,14 +155,10 @@ class _HomepageState extends State<Homepage> {
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Hotels Near You",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Text(
+                          "Hotels Near You",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -196,14 +188,10 @@ class _HomepageState extends State<Homepage> {
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Restaurants Near You",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Text(
+                          "Restaurants Near You",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
