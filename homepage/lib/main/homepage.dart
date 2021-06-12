@@ -11,7 +11,6 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   double get deviceWidth => MediaQuery.of(context).size.width;
   double get deviceHeight => MediaQuery.of(context).size.height;
-
   void query(String fetch) {}
   int count = 0;
   @override
