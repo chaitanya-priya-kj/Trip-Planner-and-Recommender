@@ -21,7 +21,7 @@ List<Images> generateImages(List item) {
     return Images(
       index = index,
       Imagelink: item[index],
-      Imagename: "image $index",
+      Imagename: "Image $index",
     );
   });
 }
@@ -113,7 +113,38 @@ class _PlanningState extends State<Planning> {
                             print(img.Imagename);
                             count++;
                           },
-                          child: img.Imagelink,
+                          child: Stack(
+                            children: [
+                              img.Imagelink,
+                              Positioned(
+                                bottom: 0.0,
+                                left: 0.0,
+                                right: 0.0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(200, 0, 0, 0),
+                                        Color.fromARGB(0, 0, 0, 0)
+                                      ],
+                                      begin: Alignment.bottomCenter,
+                                      end: Alignment.topCenter,
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10.0, horizontal: 10.0),
+                                  child: Text(
+                                    '${img.Imagename}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         );
                       }).toList(),
                     ),
@@ -153,15 +184,48 @@ class _PlanningState extends State<Planning> {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children: hotel.map<GestureDetector>((Images img) {
-                        return GestureDetector(
-                          onTap: () {
-                            print(img.Imagename);
-                            count++;
-                          },
-                          child: img.Imagelink,
-                        );
-                      }).toList(),
+                      children: hotel.map<GestureDetector>(
+                        (Images img) {
+                          return GestureDetector(
+                            onTap: () {
+                              print(img.Imagename);
+                              count++;
+                            },
+                            child: Stack(
+                              children: [
+                                img.Imagelink,
+                                Positioned(
+                                  bottom: 0.0,
+                                  left: 0.0,
+                                  right: 0.0,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color.fromARGB(200, 0, 0, 0),
+                                          Color.fromARGB(0, 0, 0, 0)
+                                        ],
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                      ),
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 10.0),
+                                    child: Text(
+                                      '${img.Imagename}',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ).toList(),
                     ),
                   ),
                 ),
@@ -205,7 +269,38 @@ class _PlanningState extends State<Planning> {
                             print(img.Imagename);
                             count++;
                           },
-                          child: img.Imagelink,
+                          child: Stack(
+                            children: [
+                              img.Imagelink,
+                              Positioned(
+                                bottom: 0.0,
+                                left: 0.0,
+                                right: 0.0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(200, 0, 0, 0),
+                                        Color.fromARGB(0, 0, 0, 0)
+                                      ],
+                                      begin: Alignment.bottomCenter,
+                                      end: Alignment.topCenter,
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10.0, horizontal: 10.0),
+                                  child: Text(
+                                    '${img.Imagename}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         );
                       }).toList(),
                     ),
@@ -251,7 +346,38 @@ class _PlanningState extends State<Planning> {
                             print(img.Imagename);
                             count++;
                           },
-                          child: img.Imagelink,
+                          child: Stack(
+                            children: [
+                              img.Imagelink,
+                              Positioned(
+                                bottom: 0.0,
+                                left: 0.0,
+                                right: 0.0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(200, 0, 0, 0),
+                                        Color.fromARGB(0, 0, 0, 0)
+                                      ],
+                                      begin: Alignment.bottomCenter,
+                                      end: Alignment.topCenter,
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 10.0, horizontal: 10.0),
+                                  child: Text(
+                                    '${img.Imagename}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         );
                       }).toList(),
                     ),

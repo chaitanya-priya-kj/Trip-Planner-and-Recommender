@@ -144,7 +144,38 @@ class _HomepageState extends State<Homepage> {
                                 print(img.Imagename);
                                 count++;
                               },
-                              child: img.Imagelink,
+                              child: Stack(
+                                children: [
+                                  img.Imagelink,
+                                  Positioned(
+                                    bottom: 0.0,
+                                    left: 0.0,
+                                    right: 0.0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color.fromARGB(200, 0, 0, 0),
+                                            Color.fromARGB(0, 0, 0, 0)
+                                          ],
+                                          begin: Alignment.bottomCenter,
+                                          end: Alignment.topCenter,
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 10.0, horizontal: 10.0),
+                                      child: Text(
+                                        '${img.Imagename}',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           }).toList(),
                         ),
@@ -177,7 +208,38 @@ class _HomepageState extends State<Homepage> {
                                 print(img.Imagename);
                                 count++;
                               },
-                              child: img.Imagelink,
+                              child: Stack(
+                                children: [
+                                  img.Imagelink,
+                                  Positioned(
+                                    bottom: 0.0,
+                                    left: 0.0,
+                                    right: 0.0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color.fromARGB(200, 0, 0, 0),
+                                            Color.fromARGB(0, 0, 0, 0)
+                                          ],
+                                          begin: Alignment.bottomCenter,
+                                          end: Alignment.topCenter,
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 10.0, horizontal: 10.0),
+                                      child: Text(
+                                        '${img.Imagename}',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           }).toList(),
                         ),
@@ -210,7 +272,38 @@ class _HomepageState extends State<Homepage> {
                                 print(img.Imagename);
                                 count++;
                               },
-                              child: img.Imagelink,
+                              child: Stack(
+                                children: [
+                                  img.Imagelink,
+                                  Positioned(
+                                    bottom: 0.0,
+                                    left: 0.0,
+                                    right: 0.0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color.fromARGB(200, 0, 0, 0),
+                                            Color.fromARGB(0, 0, 0, 0)
+                                          ],
+                                          begin: Alignment.bottomCenter,
+                                          end: Alignment.topCenter,
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 10.0, horizontal: 10.0),
+                                      child: Text(
+                                        '${img.Imagename}',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           }).toList(),
                         ),
