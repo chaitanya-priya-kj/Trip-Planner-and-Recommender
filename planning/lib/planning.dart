@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'planImages.dart';
+import 'search.dart';
 
 class Planning extends StatefulWidget {
   @override
@@ -20,20 +21,68 @@ class _PlanningState extends State<Planning> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // SizedBox(height: 5,),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(50.0),
+                        child: Image(
+                            image: AssetImage("assets/images/temp.jpg"),
+                            height: 40,
+                            width: 40),
+                      ),
+                      // Text("Hello,"),
+                      Align(
+                        alignment: Alignment(50, 50),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 190),
+                          child: Row(
+                            // mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              ButtonTheme(
+                                // minWidth: 120,
+                                child:  FlatButton(
+                                  height: 30,
+                                  minWidth: 120,
+                                  shape: RoundedRectangleBorder(
+                                    side: BorderSide(color: Colors.grey.shade900, width: 1.5),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  onPressed: () => {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => search())),
+                                    print("Search Button Pressed")
+                                  },
+                                  // color: Colors.grey.withOpacity(1.0),
+                                  padding: EdgeInsets.all(1.0),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Text("Search"),
+                                      Icon(Icons.search,),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   pad("Places For You"),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 165.0, top: 2, bottom: 1),
-                    child: TextButton(
-                      onPressed: () {
-                        print("View More Button Pressed");
-                      },
-                      child: Text(
-                        "View More",
-                        style: TextStyle(decoration: TextDecoration.underline),
-                      ),
+                  TextButton(
+                    onPressed: () {
+                      print("View More Button Pressed");
+                    },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -54,19 +103,16 @@ class _PlanningState extends State<Planning> {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   pad("Hotels For You"),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 165.0, top: 2, bottom: 1),
-                    child: TextButton(
-                      onPressed: () {
-                        print("View More Button Pressed");
-                      },
-                      child: Text(
-                        "View More",
-                        style: TextStyle(decoration: TextDecoration.underline),
-                      ),
+                  TextButton(
+                    onPressed: () {
+                      print("View More Button Pressed");
+                    },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -89,19 +135,16 @@ class _PlanningState extends State<Planning> {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   pad("Restaurants For You"),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 120.0, top: 2, bottom: 1),
-                    child: TextButton(
-                      onPressed: () {
-                        print("View More Button Pressed");
-                      },
-                      child: Text(
-                        "View More",
-                        style: TextStyle(decoration: TextDecoration.underline),
-                      ),
+                  TextButton(
+                    onPressed: () {
+                      print("View More Button Pressed");
+                    },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -122,19 +165,16 @@ class _PlanningState extends State<Planning> {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   pad("Events For You"),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 165.0, top: 2, bottom: 1),
-                    child: TextButton(
-                      onPressed: () {
-                        print("View More Button Pressed");
-                      },
-                      child: Text(
-                        "View More",
-                        style: TextStyle(decoration: TextDecoration.underline),
-                      ),
+                  TextButton(
+                    onPressed: () {
+                      print("View More Button Pressed");
+                    },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -154,6 +194,7 @@ class _PlanningState extends State<Planning> {
                   ),
                 ),
               ),
+              SizedBox(height: 5,)
             ],
           ),
         ),

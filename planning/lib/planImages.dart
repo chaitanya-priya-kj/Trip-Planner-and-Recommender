@@ -22,32 +22,32 @@ List<Images> generateImages(List item) {
 }
 
 List<Image> restaurants = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
+  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
 ];
 List<Image> hotels = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
+  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
 ];
 List<Image> places = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
+  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
 ];
 List<Image> events = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
+  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
+  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
 ];
 final List<Images> place = generateImages(places);
 final List<Images> hotel = generateImages(hotels);
@@ -96,7 +96,7 @@ GestureDetector gest(Images img) {
 
 Padding pad(String str) {
   return Padding(
-    padding: const EdgeInsets.only(left: 6, bottom: 1, top: 1),
+    padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
     child: Text(
       "$str",
       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
