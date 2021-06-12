@@ -82,7 +82,7 @@ class _PlanningState extends State<Planning> {
                     },
                     child: Text(
                       "View More",
-                      style: TextStyle(decoration: TextDecoration.underline),
+                      // style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -112,7 +112,7 @@ class _PlanningState extends State<Planning> {
                     },
                     child: Text(
                       "View More",
-                      style: TextStyle(decoration: TextDecoration.underline),
+                      // style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -144,7 +144,7 @@ class _PlanningState extends State<Planning> {
                     },
                     child: Text(
                       "View More",
-                      style: TextStyle(decoration: TextDecoration.underline),
+                      // style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
@@ -174,7 +174,7 @@ class _PlanningState extends State<Planning> {
                     },
                     child: Text(
                       "View More",
-                      style: TextStyle(decoration: TextDecoration.underline),
+                      // style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
                 ],
