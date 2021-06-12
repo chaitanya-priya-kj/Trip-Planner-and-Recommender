@@ -79,10 +79,8 @@ class _HomepageState extends State<Homepage> {
                             height: 50,
                             width: 60),
                       ),
-                      Positioned(
-                        bottom: deviceHeight * 0.9,
-                        left: 50,
-                        right: 50,
+                      Align(
+                        alignment: Alignment(50, 50),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 190),
                           child: Row(
