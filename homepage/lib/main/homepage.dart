@@ -1,63 +1,18 @@
 import 'package:flutter/material.dart';
 import 'search.dart';
 import 'caro.dart';
+import "images.dart";
 
 class Homepage extends StatefulWidget {
   @override
   _HomepageState createState() => _HomepageState();
 }
 
-class Images {
-  Images(
-    int i, {
-    required this.Imagelink,
-    required this.Imagename,
-  });
-  Image Imagelink;
-  String Imagename;
-}
-
-List<Images> generateImages(List item) {
-  int numberOfItems = item.length;
-  return List<Images>.generate(numberOfItems, (int index) {
-    return Images(
-      index = index,
-      Imagelink: item[index],
-      Imagename: "image $index",
-    );
-  });
-}
-
-List<Image> restaurants = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
-];
-List<Image> hotels = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
-];
-List<Image> places = [
-  Image.asset("assets/images/1.jpg"),
-  Image.asset("assets/images/2.jpg"),
-  Image.asset("assets/images/3.jpg"),
-  Image.asset("assets/images/4.jpg"),
-  Image.asset("assets/images/5.jpg")
-];
-
 class _HomepageState extends State<Homepage> {
   double get deviceWidth => MediaQuery.of(context).size.width;
   double get deviceHeight => MediaQuery.of(context).size.height;
 
-  final List<Images> place = generateImages(places);
-  final List<Images> hotel = generateImages(hotels);
-  final List<Images> restro = generateImages(restaurants);
-  // void query(String fetch) {}
+  void query(String fetch) {}
   int count = 0;
   @override
   Widget build(BuildContext context) {
@@ -116,18 +71,7 @@ class _HomepageState extends State<Homepage> {
                     ],
                   ),
                   CarouselWithIndicatorDemo(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Places For You",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
+                  pad("Places For You"),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: SizedBox(
@@ -137,61 +81,13 @@ class _HomepageState extends State<Homepage> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: place.map<GestureDetector>((Images img) {
-                            return GestureDetector(
-                              onTap: () {
-                                print(img.Imagename);
-                                count++;
-                              },
-                              child: Stack(
-                                children: [
-                                  img.Imagelink,
-                                  Positioned(
-                                    bottom: 0.0,
-                                    left: 0.0,
-                                    right: 0.0,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color.fromARGB(200, 0, 0, 0),
-                                            Color.fromARGB(0, 0, 0, 0)
-                                          ],
-                                          begin: Alignment.bottomCenter,
-                                          end: Alignment.topCenter,
-                                        ),
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 10.0, horizontal: 10.0),
-                                      child: Text(
-                                        '${img.Imagename}',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
+                            return gest(img);
                           }).toList(),
                         ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Hotels Near You",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
+                  pad("Hotels Near You"),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: SizedBox(
@@ -201,61 +97,13 @@ class _HomepageState extends State<Homepage> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: hotel.map<GestureDetector>((Images img) {
-                            return GestureDetector(
-                              onTap: () {
-                                print(img.Imagename);
-                                count++;
-                              },
-                              child: Stack(
-                                children: [
-                                  img.Imagelink,
-                                  Positioned(
-                                    bottom: 0.0,
-                                    left: 0.0,
-                                    right: 0.0,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color.fromARGB(200, 0, 0, 0),
-                                            Color.fromARGB(0, 0, 0, 0)
-                                          ],
-                                          begin: Alignment.bottomCenter,
-                                          end: Alignment.topCenter,
-                                        ),
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 10.0, horizontal: 10.0),
-                                      child: Text(
-                                        '${img.Imagename}',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
+                            return gest(img);
                           }).toList(),
                         ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Restaurants Near You",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
+                  pad("Restaurants Near You"),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(6, 1, 0, 1),
                     child: SizedBox(
@@ -265,44 +113,7 @@ class _HomepageState extends State<Homepage> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: restro.map<GestureDetector>((Images img) {
-                            return GestureDetector(
-                              onTap: () {
-                                print(img.Imagename);
-                                count++;
-                              },
-                              child: Stack(
-                                children: [
-                                  img.Imagelink,
-                                  Positioned(
-                                    bottom: 0.0,
-                                    left: 0.0,
-                                    right: 0.0,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color.fromARGB(200, 0, 0, 0),
-                                            Color.fromARGB(0, 0, 0, 0)
-                                          ],
-                                          begin: Alignment.bottomCenter,
-                                          end: Alignment.topCenter,
-                                        ),
-                                      ),
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 10.0, horizontal: 10.0),
-                                      child: Text(
-                                        '${img.Imagename}',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
+                            return gest(img);
                           }).toList(),
                         ),
                       ),
