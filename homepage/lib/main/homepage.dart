@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'search.dart';
 import 'caro.dart';
 import 'homeImages.dart';
 
@@ -43,26 +42,32 @@ class _HomepageState extends State<Homepage> {
                             children: [
                               ButtonTheme(
                                 // minWidth: 120,
-                                child:  FlatButton(
+                                child: FlatButton(
                                   height: 30,
                                   minWidth: 120,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(color: Colors.grey.shade900, width: 1.5),
+                                    side: BorderSide(
+                                        color: Colors.grey.shade900,
+                                        width: 1.5),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   onPressed: () => {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => search())),
-                                    print("Search Button Pressed")
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) => search())),
+                                    showSearch(
+                                        context: context, delegate: Search()),
+                                    // print("Search Button Pressed")
                                   },
                                   // color: Colors.grey.withOpacity(1.0),
                                   padding: EdgeInsets.all(1.0),
                                   child: Row(
                                     children: <Widget>[
                                       Text("Search"),
-                                      Icon(Icons.search,),
+                                      Icon(
+                                        Icons.search,
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -146,7 +151,11 @@ class _HomepageState extends State<Homepage> {
                         children: [
                           IconButton(icon: Icon(Icons.home), onPressed: () {}),
                           IconButton(
-                              icon: Icon(Icons.favorite,color: Colors.redAccent[700],size: 30.0,),
+                              icon: Icon(
+                                Icons.favorite,
+                                color: Colors.redAccent[700],
+                                size: 30.0,
+                              ),
                               onPressed: () {}),
                           IconButton(icon: Icon(Icons.map), onPressed: () {}),
                           IconButton(icon: Icon(Icons.note), onPressed: () {}),
@@ -161,5 +170,91 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
     );
+  }
+}
+
+//Search Button
+class Search extends SearchDelegate<String> {
+  final cities = [
+    "new new",
+    "new old",
+    "new hello",
+    "indore",
+    "jalalpur",
+    "kanpur",
+    "chennai",
+    "rajkot",
+    "lucknow"
+  ];
+  final recentcities = [
+    "jalalpur",
+    "kanpur",
+    "chennai",
+  ];
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = "";
+          })
+    ];
+    // throw UnimplementedError();
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: () {
+        close(context, "");
+      },
+    );
+    // throw UnimplementedError();
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Container(
+      child: Card(
+        color: Colors.red,
+        child: Center(
+          child: Text(query),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final sugglist = query.isEmpty
+        ? recentcities
+        : cities.where((element) => element.startsWith(query)).toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          showResults(context);
+        },
+        leading: Icon(Icons.location_city),
+        title: RichText(
+          text: TextSpan(
+              text: sugglist[index].substring(0, query.length),
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(
+                    text: sugglist[index].substring(query.length),
+                    style: TextStyle(color: Colors.grey))
+              ]),
+        ),
+      ),
+      itemCount: sugglist.length,
+    );
+    // throw UnimplementedError();
   }
 }
