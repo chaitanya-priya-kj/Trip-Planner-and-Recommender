@@ -117,7 +117,6 @@ class _SurveyPageState extends State<SurveyPage> {
                           context,
                           new MaterialPageRoute(
                               builder: (context) => new Homepage()));
-                      // Navigator.pushReplacementNamed(context, Homepage.id);
                     }
                   });
                 },
