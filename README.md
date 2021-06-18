@@ -6,5 +6,4 @@ Different pages flutter file
 App name:
 
 Travel Plan
-
 Make Travel Easy!!
