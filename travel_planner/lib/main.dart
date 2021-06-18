@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'authorization/Login.dart';
 import 'authorization/SignUp.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'surveyPage/surveyPage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
-        Homepage.id: (context) => Homepage(),
+        SurveyPage.id: (context) => SurveyPage(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUp.id: (context) => SignUp(),
       },

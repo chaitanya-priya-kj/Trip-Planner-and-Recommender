@@ -1,5 +1,6 @@
 import 'package:travel_planner/homepage/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_planner/surveyPage/surveyPage.dart';
 import 'components/rounded_button.dart';
 import 'package:travel_planner/authorization/constraints.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     final user = await _auth.signInWithEmailAndPassword(
                         email: email, password: password);
                     if (user != null) {
-                      Navigator.pushReplacementNamed(context, Homepage.id);
+                      Navigator.pushReplacementNamed(context, SurveyPage.id);
                     }
 
                     setState(() {

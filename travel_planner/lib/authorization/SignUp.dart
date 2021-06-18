@@ -1,5 +1,6 @@
 import 'package:travel_planner/homepage/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_planner/surveyPage/surveyPage.dart';
 import 'components/rounded_button.dart';
 import 'constraints.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -79,7 +80,7 @@ class _SignUpState extends State<SignUp> {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
                     // if (newUser != null) {
-                    Navigator.pushReplacementNamed(context, Homepage.id);
+                    Navigator.pushReplacementNamed(context, SurveyPage.id);
 
                     setState(() {
                       showSpinner = false;

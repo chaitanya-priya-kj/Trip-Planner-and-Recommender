@@ -39,7 +39,9 @@ dependencies:
   slide_popup_dialog: ^0.0.2
   circle_button: ^1.0.1
   sliding_up_panel: ^2.0.0+1
-
+  group_radio_button: ^1.1.0
+  syncfusion_flutter_sliders: ^19.1.69-beta
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
