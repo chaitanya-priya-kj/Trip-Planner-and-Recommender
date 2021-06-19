@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'planImages.dart';
 import 'caro.dart';
+import 'package:travel_planner/itinerary/itinerary.dart';
 
 class Planning extends StatefulWidget {
+  static const String id = 'planning';
   late final String str, days;
   Planning(String name, String nod) {
     this.str = name;
@@ -135,6 +137,36 @@ class _PlanningState extends State<Planning> {
                         children: event.map<GestureDetector>((Images img) {
                           return gest(img, context);
                         }).toList(),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => new Iitinerary()));
+                      });
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      minimumSize: Size(100, 40),
+                    ),
+                    child: Text(
+                      "Go To Itinerary",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Colors.white,
                       ),
                     ),
                   ),

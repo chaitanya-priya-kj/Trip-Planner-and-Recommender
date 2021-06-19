@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         SurveyPage.id: (context) => SurveyPage(),
+        Homepage.id: (context) => Homepage(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUp.id: (context) => SignUp(),
       },

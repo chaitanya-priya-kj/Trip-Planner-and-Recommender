@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_planner/planning/planning.dart';
 import 'places.dart';
 // import 'package:slide_popup_dialog/slide_popup_dialog.dart' as slideDialog;
 import 'package:circle_button/circle_button.dart';
@@ -445,6 +446,7 @@ class _Details extends State<OverviewDetails> {
                       onPressed: () {
                         append();
                         print(Morning);
+                        Navigator.pop(context, Planning.id);
                         // TODO enable to go back
                         // setState(() { Navigator.pop(context); });
                       },

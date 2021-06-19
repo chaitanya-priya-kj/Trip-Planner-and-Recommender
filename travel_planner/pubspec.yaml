@@ -41,7 +41,7 @@ dependencies:
   sliding_up_panel: ^2.0.0+1
   group_radio_button: ^1.1.0
   syncfusion_flutter_sliders: ^19.1.69-beta
-  
+  search_page: ^2.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
