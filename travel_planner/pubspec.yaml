@@ -42,6 +42,9 @@ dependencies:
   group_radio_button: ^1.1.0
   syncfusion_flutter_sliders: ^19.1.69-beta
   search_page: ^2.0.0+1
+  tflite_flutter: ^0.8.0
+  tflite: ^1.1.1
+  tflite_flutter_helper: ^0.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,6 +63,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    # - place_recommendation.tflite
+    # - hotel_recommendation.tflite
+    # - resto_recommendation.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
