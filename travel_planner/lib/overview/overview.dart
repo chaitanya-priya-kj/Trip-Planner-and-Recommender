@@ -451,8 +451,6 @@ class _Details extends State<OverviewDetails> {
                         append();
                         print(Morning);
                         Navigator.pop(context, Planning.id);
-                        // TODO enable to go back
-                        // setState(() { Navigator.pop(context); });
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,

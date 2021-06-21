@@ -102,8 +102,6 @@ class _SurveyPageState extends State<SurveyPage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // print("$selection");
-                  // choiceMade.add(selection);
                   setState(() {
                     count++;
                     if (count == options.length - 1) {

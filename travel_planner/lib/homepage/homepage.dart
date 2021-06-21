@@ -42,10 +42,8 @@ class _HomepageState extends State<Homepage> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 190),
                             child: Row(
-                              // mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 ButtonTheme(
-                                  // minWidth: 120,
                                   child: FlatButton(
                                     height: 30,
                                     minWidth: 120,
@@ -56,15 +54,9 @@ class _HomepageState extends State<Homepage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
                                     onPressed: () => {
-                                      // Navigator.push(
-                                      //     context,
-                                      //     MaterialPageRoute(
-                                      //         builder: (context) => search())),
                                       showSearch(
                                           context: context, delegate: Search()),
-                                      // print("Search Button Pressed")
                                     },
-                                    // color: Colors.grey.withOpacity(1.0),
                                     padding: EdgeInsets.all(1.0),
                                     child: Row(
                                       children: <Widget>[
