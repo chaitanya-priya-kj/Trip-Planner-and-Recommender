@@ -1,11 +1,11 @@
-import 'package:travel_planner/homepage/homepage.dart';
+// import 'package:travel_planner/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_planner/surveyPage/surveyPage.dart';
 import 'components/rounded_button.dart';
 import 'constraints.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:toast/toast.dart';
+// import 'package:toast/toast.dart';
 
 class SignUp extends StatefulWidget {
   static const String id = 'SignUp_screen';
@@ -36,9 +36,9 @@ class _SignUpState extends State<SignUp> {
                 child: Hero(
                   tag: 'logo',
                   child: Container(
-                    height: 60.0,
-                    width: 60.0,
-                    child: Image.asset('assets/images/temp.jpg'),
+                    height: 120.0,
+                    width: 120.0,
+                    child: Image.asset('assets/images/logo.jpg'),
                   ),
                 ),
               ),
@@ -87,8 +87,8 @@ class _SignUpState extends State<SignUp> {
                     });
                   } catch (e) {
                     print(e);
-                    Toast.show("$e", context,
-                        duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+                    // Toast.show("$e", context,
+                    //     duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
                   }
                 },
               ),

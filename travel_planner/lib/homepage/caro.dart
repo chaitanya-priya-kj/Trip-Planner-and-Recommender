@@ -4,11 +4,18 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 final List<String> imgList = [
-  "assets/images/1.jpg",
-  "assets/images/2.jpg",
-  "assets/images/3.jpg",
-  "assets/images/4.jpg",
-  "assets/images/5.jpg"
+  "assets/images/manali.jpg",
+  "assets/images/goa.jpg",
+  "assets/images/lakshadweep.jpg",
+  "assets/images/pondi.jpg",
+  "assets/images/mangalore.jpg"
+];
+List<String> caroName = [
+  "Manali",
+  "Goa",
+  "Lakshadweep Island",
+  "Pondicherry",
+  "Mangalore"
 ];
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
@@ -89,7 +96,7 @@ final List<Widget> imageSliders = imgList
                         padding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
                         child: Text(
-                          'No. ${imgList.indexOf(item)} image',
+                          '${caroName[imgList.indexOf(item)]}',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,

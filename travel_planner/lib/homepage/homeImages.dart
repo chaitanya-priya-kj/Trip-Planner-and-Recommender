@@ -10,41 +10,137 @@ class Images {
   String Imagename;
 }
 
-List<Images> generateImages(List item) {
+List<Images> generateImages(List item, List name) {
   int numberOfItems = item.length;
   return List<Images>.generate(numberOfItems, (int index) {
     return Images(
       index = index,
       Imagelink: item[index],
-      Imagename: "image $index",
+      Imagename: "${name[index]}",
     );
   });
 }
 
 List<Image> restaurants = [
-  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
+  Image.asset(
+    "assets/images/6.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/7.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/8.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/9.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/10.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  )
+];
+List<String> restroName = [
+  "Cafe El-Chico",
+  "Barcode- Restro & Bar",
+  "Old School Cafe",
+  "The Tamarind Tree",
+  "R.P Lounge & Restaurant"
+];
+List<String> hotelName = [
+  "Hotel Kanha Shyam",
+  "Hotel Kashi",
+  "Hotel Grand Continent",
+  "Hotel 4 View",
+  "Hotel Ajay International"
 ];
 List<Image> hotels = [
-  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
+  Image.asset(
+    "assets/images/1.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/2.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/3.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/4.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/5.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  )
+];
+List<String> placeName = [
+  "Goakarna",
+  "Himalayas",
+  "Andaman & Nicobar",
+  "Kasol",
+  "Kerala"
 ];
 List<Image> places = [
-  Image.asset("assets/images/1.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/2.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/3.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/4.jpg",height: 240,width: 240, fit: BoxFit.fill,),
-  Image.asset("assets/images/5.jpg",height: 240,width: 240, fit: BoxFit.fill,)
+  Image.asset(
+    "assets/images/gokarna.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/himalaya.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/andaman.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/kasol.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/kerala.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  )
 ];
-final List<Images> place = generateImages(places);
-final List<Images> hotel = generateImages(hotels);
-final List<Images> restro = generateImages(restaurants);
+final List<Images> place = generateImages(places, placeName);
+final List<Images> hotel = generateImages(hotels, hotelName);
+final List<Images> restro = generateImages(restaurants, restroName);
 int count = 0;
 GestureDetector gest(Images img) {
   return GestureDetector(

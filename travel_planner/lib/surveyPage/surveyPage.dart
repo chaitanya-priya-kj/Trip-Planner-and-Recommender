@@ -27,6 +27,7 @@ class _SurveyPageState extends State<SurveyPage> {
   ];
   Map<String, bool> q2 = {
     "Trekking": false,
+    "Mountains": false,
     "Beaches": false,
     "Water": false,
     "Sport": false,
@@ -51,7 +52,7 @@ class _SurveyPageState extends State<SurveyPage> {
     "South Indian": false,
     "Italian": false,
     "Japanese": false,
-    "Fast Food": false,
+    "Sea Food": false,
     "Korean": false
   };
   SfRangeValues _values = SfRangeValues(4000.0, 8000.0);

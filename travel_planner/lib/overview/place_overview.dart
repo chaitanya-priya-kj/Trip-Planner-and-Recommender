@@ -275,49 +275,6 @@ class _Details extends State<PlaceDetails> {
                 ],
               ),
               SizedBox(height: 20),
-              // Container(
-              //   alignment: Alignment.centerLeft,
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       Text(
-              //         "${places[0]["price"]}",
-              //         style: TextStyle(
-              //           fontWeight: FontWeight.bold,
-              //           fontSize: 17,
-              //           color: Color(0xFF219529),
-              //         ),
-              //         maxLines: 1,
-              //         textAlign: TextAlign.left,
-              //       ),
-              //       // SizedBox(width: 10,),
-              //       // ElevatedButton(
-              //       //   onPressed: () {
-              //       //     // _showDialog();
-              //       //   },
-              //       //   style: ButtonStyle(
-              //       //     backgroundColor:
-              //       //         MaterialStateProperty.all(Colors.black),
-              //       //     shape:
-              //       //         MaterialStateProperty.all<RoundedRectangleBorder>(
-              //       //       RoundedRectangleBorder(
-              //       //         borderRadius: BorderRadius.circular(18.0),
-              //       //         side: BorderSide(color: Colors.black),
-              //       //       ),
-              //       //     ),
-              //       //   ),
-              //       //   child: Text(
-              //       //     "Planning",
-              //       //     style: TextStyle(
-              //       //       fontWeight: FontWeight.bold,
-              //       //       fontSize: 17,
-              //       //     ),
-              //       //   ),
-              //       // ),
-              //     ],
-              //   ),
-              // ),
-              // SizedBox(height: 40),
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(

@@ -41,19 +41,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     return Scaffold(
       backgroundColor: animation.value,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
+            Column(
               children: <Widget>[
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('assets/images/temp.jpg'),
-                    height: 60.0,
-                    width: 60,
+                    child: Image.asset('assets/images/logo.jpg'),
+                    height: 120.0,
+                    width: 120,
                   ),
                 ),
                 TypewriterAnimatedTextKit(
@@ -66,7 +66,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               ],
             ),
             SizedBox(
-              height: 48.0,
+              height: 35.0,
             ),
             RoundedButton(
               title: 'Log In',

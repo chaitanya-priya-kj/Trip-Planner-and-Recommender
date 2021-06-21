@@ -11,164 +11,195 @@ class Images {
   String Imagename;
 }
 
-List<Images> generateImages(List item) {
+List<Images> generateImages(List item, List name) {
   int numberOfItems = item.length;
   return List<Images>.generate(numberOfItems, (int index) {
     return Images(
       index = index,
       Imagelink: item[index],
-      Imagename: "image $index",
+      Imagename: "${name[index]}",
     );
   });
 }
 
+List<String> restroName = [
+  "SeaFood Delights",
+  "Amaya",
+  "The Sunset Lounge At Symphony Samudra",
+  "Red Snapper",
+  "Dugong"
+];
 List<Image> restaurants = [
   Image.asset(
-    "assets/images/1.jpg",
+    "assets/images/seafood.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/2.jpg",
+    "assets/images/amaya.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/3.jpg",
+    "assets/images/sunsetlounge.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/4.jpg",
+    "assets/images/redsnapper.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/5.jpg",
+    "assets/images/dugong.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   )
+];
+List<String> hotelName = [
+  "Lemon Tree Hotel Port Blair",
+  "Havelock Island Beach Resort",
+  "Sea Shell Samssara",
+  "Silver Sand Beach Resort",
+  "Peerless Resort Portblair"
 ];
 List<Image> hotels = [
   Image.asset(
-    "assets/images/1.jpg",
+    "assets/images/lemontree.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/2.jpg",
+    "assets/images/havelock.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/3.jpg",
+    "assets/images/seashell.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/4.jpg",
+    "assets/images/silversand.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/5.jpg",
+    "assets/images/peerless.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   )
+];
+List<String> placeName = [
+  "Elephant Beach",
+  "Long Island Port Blair",
+  "Neill Island",
+  "Rutland Island",
+  "Narcondam Island"
 ];
 List<Image> places = [
   Image.asset(
-    "assets/images/1.jpg",
+    "assets/images/elephant.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/2.jpg",
+    "assets/images/long.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/3.jpg",
+    "assets/images/neill.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/4.jpg",
+    "assets/images/rutland.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/5.jpg",
+    "assets/images/narcondam.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   )
+];
+List<String> things = [
+  "Cellular Jail Andaman",
+  "Discover Scuba Dive(Shore)",
+  "Night Kayaking At Swaraj Dweep(Havelock) Andamans",
+  "History Buffs Trails to Ross Island",
+  "Seakart Self Drive Excursion in Corbyns Cove Beach",
+  "Heritage and Cultural Walk of Port Blair"
 ];
 List<Image> events = [
   Image.asset(
-    "assets/images/1.jpg",
+    "assets/images/cellular.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/2.jpg",
+    "assets/images/scuba.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/3.jpg",
+    "assets/images/kayaking.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/4.jpg",
+    "assets/images/history.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   ),
   Image.asset(
-    "assets/images/5.jpg",
+    "assets/images/seakart.jpg",
+    height: 240,
+    width: 240,
+    fit: BoxFit.fill,
+  ),
+  Image.asset(
+    "assets/images/heritage.jpg",
     height: 240,
     width: 240,
     fit: BoxFit.fill,
   )
 ];
-final List<Images> place = generateImages(places);
-final List<Images> hotel = generateImages(hotels);
-final List<Images> restro = generateImages(restaurants);
-final List<Images> event = generateImages(events);
+final List<Images> place = generateImages(places, placeName);
+final List<Images> hotel = generateImages(hotels, hotelName);
+final List<Images> restro = generateImages(restaurants, restroName);
+final List<Images> event = generateImages(events, things);
 int count = 0;
 GestureDetector gest(Images img, BuildContext context) {
   return GestureDetector(
     onTap: () {
       print(img.Imagename);
-      // setState(() {
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) => OverviewDetails()));
-      // });
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => OverviewDetails()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => OverviewDetails(img.Imagename)));
       count++;
-      OverviewDetails();
+      // OverviewDetails();
     },
     child: Stack(
       children: [

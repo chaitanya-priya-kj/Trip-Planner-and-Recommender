@@ -33,9 +33,9 @@ class _HomepageState extends State<Homepage> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(50.0),
                           child: Image(
-                              image: AssetImage("assets/images/temp.jpg"),
-                              height: 40,
-                              width: 40),
+                              image: AssetImage("assets/images/logo.jpg"),
+                              height: 60,
+                              width: 60),
                         ),
                         Align(
                           alignment: Alignment(50, 50),
@@ -158,8 +158,6 @@ class _HomepageState extends State<Homepage> {
                             IconButton(
                                 icon: Icon(
                                   Icons.favorite,
-                                  color: Colors.redAccent[700],
-                                  size: 30.0,
                                 ),
                                 onPressed: () {}),
                             IconButton(icon: Icon(Icons.map), onPressed: () {}),
@@ -184,20 +182,18 @@ class _HomepageState extends State<Homepage> {
 class Search extends SearchDelegate<String> {
   final cities = [
     "new delhi",
-    "new old",
-    "new hello",
-    "indore",
+    "Goa",
+    "Gokarna",
+    "Andaman & Nicobar Island",
     "jalalpur",
+    "Ahemdabad",
+    "Nanital",
+    "Allahabad",
     "kanpur",
     "chennai",
-    "rajkot",
     "lucknow"
   ];
-  final recentcities = [
-    "jalalpur",
-    "kanpur",
-    "chennai",
-  ];
+  final recentcities = ["New Delhi", "Shimla", "Nanital", "Jaipur"];
   @override
   List<Widget> buildActions(BuildContext context) {
     return [

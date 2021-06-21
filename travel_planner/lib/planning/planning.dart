@@ -22,7 +22,6 @@ class _PlanningState extends State<Planning> {
     placeName = widget.str;
     days = widget.days;
   }
-  //TODO: Get Place Name from database. Take place name as input from overview page
   // set getPlaceName(String str) {
   //   this.txt = str;
   // }
@@ -47,6 +46,38 @@ class _PlanningState extends State<Planning> {
                   child: Text(
                     "$placeName",
                     style: TextStyle(fontSize: 40),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    pad("Places To Visit"),
+                    TextButton(
+                      onPressed: () {
+                        print("View More Button Pressed");
+                      },
+                      child: Text(
+                        "View More",
+                        // style: TextStyle(decoration: TextDecoration.underline),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 6),
+                  child: SizedBox(
+                    height: 150,
+                    width: deviceWidth,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: place.map<GestureDetector>(
+                          (Images img) {
+                            return gest(img, context);
+                          },
+                        ).toList(),
+                      ),
+                    ),
                   ),
                 ),
                 Row(
@@ -114,7 +145,7 @@ class _PlanningState extends State<Planning> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    pad("Events For You"),
+                    pad("Things To Do"),
                     TextButton(
                       onPressed: () {
                         print("View More Button Pressed");

@@ -4,11 +4,11 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 final List<String> imgList = [
-  "assets/images/1.jpg",
-  "assets/images/2.jpg",
-  "assets/images/3.jpg",
-  "assets/images/4.jpg",
-  "assets/images/5.jpg"
+  "assets/images/c1.jpg",
+  "assets/images/c2.jpg",
+  "assets/images/c3.jpg",
+  "assets/images/c4.jpg",
+  "assets/images/c5.jpg"
 ];
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
@@ -63,12 +63,10 @@ final List<Widget> imageSliders = imgList
             margin: EdgeInsets.all(5.0),
             // width: 1500,
             child: ClipRRect(
-                
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 child: Stack(
                   children: <Widget>[
                     GestureDetector(
-                      
                         child:
                             Image.asset(item, fit: BoxFit.fill, width: 1000.0),
                         onTap: () {
@@ -91,14 +89,14 @@ final List<Widget> imageSliders = imgList
                         ),
                         padding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 20.0),
-                        child: Text(
-                          'No. ${imgList.indexOf(item)} image',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        // child: Text(
+                        //   'No. ${imgList.indexOf(item)} image',
+                        //   style: TextStyle(
+                        //     color: Colors.white,
+                        //     fontSize: 20.0,
+                        //     fontWeight: FontWeight.bold,
+                        //   ),
+                        // ),
                       ),
                     ),
                   ],

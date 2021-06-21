@@ -28,7 +28,7 @@ class Iitinerary extends StatefulWidget {
 
 class _Iitinerary extends State<Iitinerary> {
   double get deviceHeight => MediaQuery.of(context).size.height;
-  String place = "Goa";
+  String place = "Andaman & Nicobar Island";
   final List<Item> _data = generateItems(4);
 
   @override
@@ -67,7 +67,7 @@ class _Iitinerary extends State<Iitinerary> {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          "$place,",
+                          "$place",
                           style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w400),
                         ),
@@ -128,28 +128,28 @@ List<String> maen = ["Morning", "Afternoon", "Evening", "Night"];
 
 List<List<List<String>>> sd = [
   [
-    ["hotel", "sgs", "event", "sdfs"],
-    ["resto", "sdfff"],
-    ["resto", "hotel"],
-    ["event"]
+    ["Sea Shell Samssara", "Rutland Island"],
+    ["Amaya"],
+    ["Night Kayaking At Swaraj Dweep(Havelock) Andamans"],
+    ["Night Kayaking At Swaraj Dweep(Havelock) Andamans"]
   ],
   [
-    ["resto", "hotel", "event"],
-    ["event"],
-    ["resto", "event"],
-    ["event"]
+    ["Sea Shell Samssara", "Long Island Port Blair"],
+    ["Cellular Jail Andaman"],
+    ["SeaFood Delights"],
+    ["Dugong"]
   ],
   [
-    ["hjhgh", "resto", "hotel"],
-    ["event"],
-    ["hotel", "event"],
-    ["resto"]
+    ["Sea Shell Samssara", "Neill Island"],
+    ["Discover Scuba Dive(Shore)"],
+    ["History Buffs Trails to Ross Island"],
+    ["The Sunset Lounge At Symphony Samudra"]
   ],
   [
-    ["resto", "event"],
-    ["hotel"],
-    ["resto", "event"],
-    ["hotel"]
+    ["Sea Shell Samssara", "Heritage and Cultural Walk of Port Blair"],
+    ["Seakart Self Drive Excursion in Corbyns Cove Beach"],
+    ["Elephant Beach"],
+    ["Red Snapper"]
   ]
 ];
 

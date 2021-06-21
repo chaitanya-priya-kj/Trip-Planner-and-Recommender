@@ -27,6 +27,10 @@ List<Days> generateDays() {
 }
 
 class OverviewDetails extends StatefulWidget {
+  late final String name;
+  OverviewDetails(String str) {
+    this.name = str;
+  }
   @override
   _Details createState() => _Details();
 }
@@ -36,11 +40,11 @@ class _Details extends State<OverviewDetails> {
   double _fabHeight = 0;
   double _panelHeightOpen = 0;
   double _panelHeightClosed = 95.0;
-
+  String key = "";
   @override
   void initState() {
     super.initState();
-
+    key = widget.name;
     _fabHeight = _initFabHeight;
   }
 
@@ -502,16 +506,18 @@ class _Details extends State<OverviewDetails> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "${places[0]["name"]}",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
+                  Flexible(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "${key}",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
+                        ),
+                        maxLines: 2,
+                        textAlign: TextAlign.left,
                       ),
-                      maxLines: 2,
-                      textAlign: TextAlign.left,
                     ),
                   ),
                   IconButton(
@@ -533,7 +539,7 @@ class _Details extends State<OverviewDetails> {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "${places[0]["location"]}",
+                      "${location[key]}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
@@ -552,7 +558,7 @@ class _Details extends State<OverviewDetails> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${places[0]["price"]}",
+                      "${price[key]}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,
@@ -561,30 +567,6 @@ class _Details extends State<OverviewDetails> {
                       maxLines: 1,
                       textAlign: TextAlign.left,
                     ),
-                    // SizedBox(width: 10,),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     // _showDialog();
-                    //   },
-                    //   style: ButtonStyle(
-                    //     backgroundColor:
-                    //         MaterialStateProperty.all(Colors.black),
-                    //     shape:
-                    //         MaterialStateProperty.all<RoundedRectangleBorder>(
-                    //       RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(18.0),
-                    //         side: BorderSide(color: Colors.black),
-                    //       ),
-                    //     ),
-                    //   ),
-                    //   child: Text(
-                    //     "Planning",
-                    //     style: TextStyle(
-                    //       fontWeight: FontWeight.bold,
-                    //       fontSize: 17,
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -605,7 +587,7 @@ class _Details extends State<OverviewDetails> {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "${places[0]["details"]}",
+                  "${details[key]}",
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 15.0,
@@ -638,7 +620,7 @@ class _Details extends State<OverviewDetails> {
             child: ClipRRect(
               // borderRadius: BorderRadius.circular(10.0),
               child: Image.asset(
-                "${place["img"]}",
+                "${img[key]}",
                 height: 250.0,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
