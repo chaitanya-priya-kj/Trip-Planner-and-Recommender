@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'caro.dart';
 import 'homeImages.dart';
-import 'package:toast/toast.dart';
+// import 'package:toast/toast.dart';
 import 'package:travel_planner/overview/place_overview.dart';
 
 class Homepage extends StatefulWidget {
