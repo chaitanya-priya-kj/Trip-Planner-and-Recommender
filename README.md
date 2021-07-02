@@ -1,7 +1,7 @@
 # Trip-Planner-and-Recommender
 Final year project- Trip planning and recommendation application
 
-Different pages flutter file and then integration of all the pages
+Different pages of the applications were created and then integrated in one file named travel_planner
 
 App name:
 Travel Planner,
